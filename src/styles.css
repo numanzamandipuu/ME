@@ -11,3 +11,25 @@ body {
 .btn {
     background-color: #000;
 }
+
+.card {
+    border-radius: 15px;
+    background-color: #383838;
+    border: none;
+}
+
+.card-header {
+    background: #383838;
+    border-radius: 15px!important;
+    border: none;
+}
+
+.list-group {
+    background-color: #1C1C1C;
+    border-bottom-left-radius: 15px!important;
+    border-bottom-right-radius: 15px!important;
+}
+
+.list-group-item {
+    background-color: #1C1C1C!important;
+}
