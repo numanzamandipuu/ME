@@ -12,3 +12,30 @@ collapseElements.forEach((collapseElement) => {
     });
   });
 });
+
+
+
+const dateElements = document.querySelectorAll('.date');
+
+dateElements.forEach((element) => {
+    element.addEventListener('click', () => {
+        const hasCustomClass = element.classList.contains('custom');
+        
+        dateElements.forEach((date) => {
+            date.classList.remove('custom');
+        });
+
+        if (!hasCustomClass && !element.classList.contains('current-day')) {
+            element.classList.add('custom');
+        }
+    });
+    
+    const currentDate = new Date();
+
+    const currentDay = currentDate.getDate();
+
+    const date = parseInt(element.textContent);
+    if (date === currentDay) {
+        element.classList.add('current-day');
+    }
+});
