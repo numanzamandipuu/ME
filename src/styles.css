@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --c-theme-primary: #008FFD;
+    --c-theme-primary-accent: #CBE8FF;
+    --c-bg-primary: #121212;
+    --c-bg-secondary: #EAEBEC;
+    --c-bg-tertiary: #1f1c2c;
+    --c-text-primary: #1F1F25;
+    --c-text-secondary: #999FA6;
+}
+
 body {
     background-color: #121212;
+    font-family: "Inter", sans-serif;
 }
 
 .custom-nav {
@@ -32,4 +45,142 @@ body {
 
 .list-group-item {
     background-color: #1C1C1C!important;
+}
+
+
+/* Calendar CSS */
+
+
+.datepicker {
+    width: 95%;
+    max-width: 450px;
+    background-color: var(--c-bg-tertiary);
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0 rgba(#000, .2), 0 5px 10px 0 rgba(#000, .1);
+    padding: 1rem;
+    /* justify-content: center; */
+}
+
+.datepicker-top {
+    margin-bottom: 1rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    margin-top: -.5rem;
+}
+
+.tag {
+    margin-right: .5rem;
+    margin-top: .5rem;
+    border: 0;
+    background-color: var(--c-bg-secondary);
+    border-radius: 10px;
+    padding: .5em .75em;
+    font-weight: 600;
+}
+
+.month-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month-name {
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.datepicker-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row-gap: 1rem;
+}
+
+.day, .date {
+    justify-self: center;
+}
+
+.day {
+    color: var(--c-text-secondary);
+    font-size: .875em;
+    font-weight: 500;
+    justify-self: center;
+}
+
+.date {
+    border: 0;
+    padding: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    border: 2px solid transparent;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+.date:hover {
+    background-color: #555;
+}
+
+.faded {
+    color: #635f77;
+    background-color: #363249;
+}
+
+.faded:hover {
+    color: #635f77;
+    background-color: #474357;
+}
+
+.current-day {
+    color: #FFF;
+    border-color: var(--c-theme-primary);
+    background-color: var(--c-theme-primary);
+}
+
+.current-day:hover {
+    color: #FFF;
+    border-color: var(--c-theme-primary);
+    background-color: var(--c-theme-primary);
+}
+
+.date.custom {
+    background-color: #777; 
+    color: #000;
+}
+
+
+.date {
+    border-radius: 50%;
+    position: relative;
+}
+
+.notification-dot {
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+
+
+.notification-dot-sec {
+    width: 5px;
+    height: 5px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -8px;
 }
