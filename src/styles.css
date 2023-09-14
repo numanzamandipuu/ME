@@ -7,7 +7,7 @@
     --c-bg-secondary: #EAEBEC;
     --c-bg-tertiary: #1a1727;
     --c-text-primary: #1F1F25;
-    --c-text-secondary: #999FA6;
+    --c-text-secondary: #9f9eb2;
 }
 
 body {
@@ -27,24 +27,24 @@ body {
 
 .card {
     border-radius: 15px;
-    background-color: #383838;
+    background-color: #1a1727;
     border: none;
 }
 
 .card-header {
-    background: #383838;
+    background: #1a1727;
     border-radius: 15px!important;
     border: none;
 }
 
 .list-group {
-    background-color: #1C1C1C;
+    background-color: #181818;
     border-bottom-left-radius: 15px!important;
     border-bottom-right-radius: 15px!important;
 }
 
 .list-group-item {
-    background-color: #1C1C1C!important;
+    background-color: #181818!important;
 }
 
 
@@ -191,6 +191,17 @@ body {
 
     .custom:hover {
         background-color: #2c19a4;
+    }
+
+    .faded:hover {
+        color: #635f77;
+        background-color: #363249;
+    }
+
+    .current-day:hover {
+        color: #FFF;
+        border-color: var(--c-theme-primary);
+        background-color: var(--c-theme-primary);
     }
 }
 
