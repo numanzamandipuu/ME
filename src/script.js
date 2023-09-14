@@ -39,3 +39,17 @@ dateElements.forEach((element) => {
         element.classList.add('current-day');
     }
 });
+
+
+const calendar15 = document.getElementById('calendar15');
+const content15 = document.getElementById('content15');
+
+calendar15.addEventListener('click', () => {
+    if (content15.style.display === 'none' || content15.style.display === '') {
+        content15.style.display = 'block';
+    } else {
+        content15.style.display = 'none';
+    }
+});
+
+
