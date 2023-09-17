@@ -14,6 +14,24 @@ collapseElements.forEach((collapseElement) => {
 });
 
 
+function addNotificationDot(buttonId) {
+  // Find the button element by its ID
+  const button = document.getElementById(buttonId);
+
+  if (button) {
+    // Create a span element for the notification dot
+    const notificationDot = document.createElement('span');
+    notificationDot.className = 'notification-dot';
+
+    // Clear the existing text content of the button
+    button.textContent = '';
+
+    // Append the notification dot and the date text to the button
+    button.appendChild(notificationDot);
+    button.appendChild(document.createTextNode(buttonId.replace('calendar', '')));
+  }
+}
+
 function setupCalendarButtons() {
   const dateElements = document.querySelectorAll('.date');
   const contentElement = document.getElementById('contentName'); // Assuming you have a single content element
@@ -34,7 +52,10 @@ function setupCalendarButtons() {
           const hasCustomDate = Array.from(dateElements).some((date) => date.classList.contains('custom'));
 
           // Define an array of dates to match
-          const vacationDates = ['6', '7', '13', '14', '20', '21', '27', '28'];
+          const eeeAssignmentDates = ['16', '24', '25'];
+          const MathCTDates = ['27'];
+          const vacationDates = ['1', '7', '8', '14', '15', '21', '22', '28', '29'];
+
 
           // Update the display of the content based on the presence of "custom" class
           if (hasCustomDate) {
@@ -58,7 +79,25 @@ function setupCalendarButtons() {
                       if (listGroupItem) {
                           listGroupItem.innerHTML = "Vacation";
                       }
-                  } else {
+                  }
+                  
+                  else if (eeeAssignmentDates.includes(customDateText)) {
+                    // Update the list-group-item innerHTML for EEE assignment dates
+                    const listGroupItem = contentElement.querySelector('.list-group-item.text-light');
+                    if (listGroupItem) {
+                      listGroupItem.innerHTML = "EEE Assignment";
+                    }
+                  }
+                  
+                  else if (MathCTDates.includes(customDateText)) {
+                    // Update the list-group-item innerHTML for EEE assignment dates
+                    const listGroupItem = contentElement.querySelector('.list-group-item.text-light');
+                    if (listGroupItem) {
+                      listGroupItem.innerHTML = "Math CT";
+                    }
+                  }
+                  
+                  else {
                       // Reset the list-group-item innerHTML for non-vacation dates
                       const listGroupItem = contentElement.querySelector('.list-group-item.text-light');
                       if (listGroupItem) {
@@ -87,3 +126,58 @@ function setupCalendarButtons() {
 
 // Call the function to set up click listeners for all calendar buttons
 setupCalendarButtons();
+
+const buttonIds = ['calendar15', 'calendar16', 'calendar28']; 
+
+buttonIds.forEach((id) => {
+  addNotificationDot(id);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function setupCalendarButtons() {
+//     // ... existing code ...
+  
+//     // Define an array of dates to match
+//     const eeeAssignmentDates = ['15', '20', '22'];
+  
+//     // ... existing code ...
+  
+//     dateElements.forEach((element) => {
+//       // ... existing code ...
+  
+//       // Update the display of the content based on the presence of "custom" class
+//       if (hasCustomDate) {
+//         // ... existing code ...
+  
+//         // Check if customDateText is in the eeeAssignmentDates array
+//         if (eeeAssignmentDates.includes(customDateText)) {
+//           // Update the list-group-item innerHTML for EEE assignment dates
+//           const listGroupItem = contentElement.querySelector('.list-group-item.text-light');
+//           if (listGroupItem) {
+//             listGroupItem.innerHTML = "EEE Assignment";
+//           }
+//         } else {
+//           // ... existing code ...
+//         }
+//       } else {
+//         // ... existing code ...
+//       }
+//     });
+  
+//     // ... existing code ...
+//   }

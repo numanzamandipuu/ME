@@ -209,3 +209,11 @@ body {
     display: none;
     transition: opacity 1s ease;
 }
+
+.red-header {
+    background-color: #320707;
+}
+
+.notification-card {
+    background-color: #320707;
+}
