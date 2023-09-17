@@ -211,9 +211,13 @@ body {
 }
 
 .red-header {
-    background-color: #320707;
+    background-color: #3e0e0e;
 }
 
 .notification-card {
-    background-color: #320707;
+    background-color: #3e0e0e;
+}
+
+.red-list {
+    background-color: #230e0e!important;
 }
