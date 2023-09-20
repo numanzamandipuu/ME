@@ -8,3 +8,14 @@ body {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+.book-card {
+    background-color: #1a1727;
+    color: whitesmoke;
+}
+
+.btn-outline-light {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 6px;
+}
