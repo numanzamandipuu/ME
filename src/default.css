@@ -14,8 +14,10 @@ body {
     color: whitesmoke;
 }
 
-.btn-outline-light {
+.btn-light {
     padding-top: 3px;
     padding-bottom: 3px;
     border-radius: 6px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
