@@ -111,12 +111,13 @@ function setupCalendarButtons() {
       }
     });
 
+    
     // Get the current date
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
 
-    // Get the day of the month (1-31)
-    const date = parseInt(element.textContent);
+    // Get the day from the ID attribute
+    const date = parseInt(element.id.replace('calendar', ''));
 
     // Check if the date matches today's date and add the "current-day" class
     if (date === currentDay) {
