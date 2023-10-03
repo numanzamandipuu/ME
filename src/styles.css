@@ -15,6 +15,15 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+hr {
+    background-color: white;
+    border-color: white;
+}
+
 .custom-nav {
     background-color: #1C1C1C;
     border-bottom-left-radius: 20px;
@@ -141,6 +150,10 @@ body {
     background-color: #474357;
 }
 
+.date.custom {
+    background-color: #2c19a4;
+}
+
 .current-day {
     color: #FFF;
     border-color: var(--c-theme-primary);
@@ -151,10 +164,6 @@ body {
     color: #FFF;
     border-color: var(--c-theme-primary);
     background-color: var(--c-theme-primary);
-}
-
-.date.custom {
-    background-color: #2c19a4;
 }
 
 .date {
@@ -172,11 +181,20 @@ body {
     right: -3px;
 }
 
+.notification-dot-yellow {
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
 
 .notification-dot-sec {
     width: 5px;
     height: 5px;
-    background-color: green;
+    background-color: greenyellow;
     border-radius: 50%;
     position: absolute;
     top: -8px;
@@ -189,10 +207,6 @@ body {
         background-color: #1f2441;
     }
 
-    .custom:hover {
-        background-color: #2c19a4;
-    }
-
     .faded:hover {
         color: #635f77;
         background-color: #363249;
@@ -202,6 +216,10 @@ body {
         color: #FFF;
         border-color: var(--c-theme-primary);
         background-color: var(--c-theme-primary);
+    }
+
+    .custom:hover {
+        background-color: #2c19a4;
     }
 }
 
@@ -220,4 +238,8 @@ body {
 
 .red-list {
     background-color: #230e0e!important;
+}
+
+.text-footer {
+    color: rgb(125, 125, 125);
 }

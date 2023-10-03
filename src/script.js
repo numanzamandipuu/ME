@@ -18,19 +18,63 @@ function addNotificationDot(buttonId) {
   // Find the button element by its ID
   const button = document.getElementById(buttonId);
 
-  if (button) {
-    // Create a span element for the notification dot
-    const notificationDot = document.createElement('span');
-    notificationDot.className = 'notification-dot';
 
-    // Clear the existing text content of the button
-    button.textContent = '';
+  // Create a span element for the notification dot
+  const notificationDot = document.createElement('span');
+  notificationDot.className = 'notification-dot';
 
-    // Append the notification dot and the date text to the button
-    button.appendChild(notificationDot);
-    button.appendChild(document.createTextNode(buttonId.replace('calendar', '')));
-  }
+  // Clear the existing text content of the button
+  button.textContent = '';
+
+  // Append the notification dot and the date text to the button
+  button.appendChild(notificationDot);
+  button.appendChild(document.createTextNode(buttonId.replace('calendar', '')));
+
 }
+
+
+function addNotificationDotYellow(buttonIdYellow) {
+  // Find the button element by its ID
+  const buttonYellow = document.getElementById(buttonIdYellow);
+
+
+  // Create a span element for the notification dot
+  const notificationDotYellow = document.createElement('span');
+  notificationDotYellow.className = 'notification-dot-yellow';
+
+  // Clear the existing text content of the button
+  buttonYellow.textContent = '';
+
+  // Append the notification dot and the date text to the button
+  buttonYellow.appendChild(notificationDotYellow);
+  buttonYellow.appendChild(document.createTextNode(buttonIdYellow.replace('calendar', '')));
+
+}
+
+function addNotificationDotSecond(buttonIdSec) {
+  // Find the button element by its ID
+  const buttonSec = document.getElementById(buttonIdSec);
+
+  // Create a span element for the notification dot
+  const notificationDotSec = document.createElement('span');
+  notificationDotSec.className = 'notification-dot-sec';
+
+  // Create a span element for the notification dot (original)
+  const notificationDot = document.createElement('span');
+  notificationDot.className = 'notification-dot';
+
+  // Create a text node for the date
+  const dateText = document.createTextNode(buttonIdSec.replace('calendar', ''));
+
+  // Clear the existing text content of the button
+  buttonSec.textContent = '';
+
+  // Append the elements to the button in the desired order
+  buttonSec.appendChild(notificationDot);
+  buttonSec.appendChild(dateText);
+  buttonSec.appendChild(notificationDotSec);
+}
+
 
 function setupCalendarButtons() {
   const dateElements = document.querySelectorAll('.date');
@@ -44,7 +88,7 @@ function setupCalendarButtons() {
         date.classList.remove('custom');
       });
 
-      if (!hasCustomClass && !element.classList.contains('current-day')) {
+      if (!hasCustomClass) {
         element.classList.add('custom');
       }
 
@@ -52,10 +96,18 @@ function setupCalendarButtons() {
       const hasCustomDate = Array.from(dateElements).some((date) => date.classList.contains('custom'));
 
       // Define an array of dates to match
-      const eeeAssignmentDates = ['16', '24', '20'];
-      const MathCTDates = ['27'];
-      const vacationDates = ['1', '7', '8', '14', '15', '21', '22', '28', '29'];
-      const CTAssignmentDates = ['10', '18', '25'];
+      const vacationDates = ['5', '6', '12', '13', '19', '20', '21', '22', '23', '24', '25', '26', '27'];
+      const EEELabReport1st30 = ['1'];
+      const EnglishCT = ['2', '4'];
+      const EnglishAssignment = ['3'];
+      const CSECT = ['7'];
+      const EEELabFinal2nd30 = ['8'];
+      const MELabViva = ['9'];
+      const MathCTAssignment = ['10'];
+      const CSELabFinal = ['11'];
+      const EEELabFinal1st30 = ['15'];
+      const BoardViva = ['18'];
+      
 
       // Update the display of the content based on the presence of "custom" class
       if (hasCustomDate) {
@@ -79,26 +131,80 @@ function setupCalendarButtons() {
             if (listGroupItem) {
               listGroupItem.innerHTML = "Vacation";
             }
-          } else if (eeeAssignmentDates.includes(customDateText)) {
-            // Update the list-group-item innerHTML for EEE assignment dates
+          } 
+
+          else if (EEELabReport1st30.includes(customDateText)) {
             const listGroup = contentElement.querySelector('.list-group');
             if (listGroup) {
-              listGroup.innerHTML = `<li class="list-group-item text-light red-list">EEE Assignment</li>`;
+              listGroup.innerHTML = `<li class="list-group-item text-light red-list">1st 30 EEE Lab Report Submission</li>`;
             }
-          } else if (MathCTDates.includes(customDateText)) {
-            // Update the list-group-item innerHTML for Math CT dates
+          } 
+          
+          else if (EnglishCT.includes(customDateText)) {
             const listGroup = contentElement.querySelector('.list-group');
             if (listGroup) {
-              listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>`;
+              listGroup.innerHTML = `<li class="list-group-item text-light red-list">English CT</li>`;
             }
-          } else if (CTAssignmentDates.includes(customDateText)) {
-            // Update the list-group-item innerHTML for Math CT dates
+          } 
+          
+          else if (EnglishAssignment.includes(customDateText)) {
             const listGroup = contentElement.querySelector('.list-group');
             if (listGroup) {
-              listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>
-              <li class="list-group-item text-light red-list">Math Assignment</li>`;
+              listGroup.innerHTML = `<li class="list-group-item text-light red-list">English Assignment Submission</li>`;
             }
-          } else {
+          } 
+          
+          else if (CSECT.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE CT (DKP Sir)</li>`;
+          }
+        } 
+
+        else if (EEELabFinal2nd30.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">EEE Lab Final for 2nd 30</li>`;
+          }
+        } 
+
+        else if (MELabViva.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">ME Lab Viva and Lab Quiz</li>`;
+          }
+        } 
+
+        else if (MathCTAssignment.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>
+            <li class="list-group-item text-light red-list">Math Assignment Submission</li>`;
+          }
+        }
+
+        else if (CSELabFinal.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE Lab Final</li>`;
+          }
+        } 
+
+        else if (EEELabFinal1st30.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">EEE Lab Final for 1st 30</li>`;
+          }
+        } 
+
+        else if (BoardViva.includes(customDateText)) {
+          const listGroup = contentElement.querySelector('.list-group');
+          if (listGroup) {
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">Board Viva</li>`;
+          }
+        } 
+          
+          else {
             // Reset the list-group innerHTML for non-special dates
             const listGroup = contentElement.querySelector('.list-group');
             if (listGroup) {
@@ -129,10 +235,20 @@ function setupCalendarButtons() {
 // Call the function to set up click listeners for all calendar buttons
 setupCalendarButtons();
 
-const buttonIds = ['calendar15', 'calendar16', 'calendar28']; 
 
+const buttonIds = ['calendar2', 'calendar4', 'calendar7', 'calendar3']; 
 buttonIds.forEach((id) => {
   addNotificationDot(id);
+});
+
+const buttonIdsSecond = ['calendar10']; 
+buttonIdsSecond.forEach((id) => {
+  addNotificationDotSecond(id);
+});
+
+const buttonIdsYellow = ['calendar1', 'calendar8', 'calendar9', 'calendar11', 'calendar15', 'calendar18']; 
+buttonIdsYellow.forEach((id) => {
+  addNotificationDotYellow(id);
 });
 
 
@@ -151,35 +267,40 @@ buttonIds.forEach((id) => {
 
 
 
-// function setupCalendarButtons() {
-//     // ... existing code ...
-  
-//     // Define an array of dates to match
-//     const eeeAssignmentDates = ['15', '20', '22'];
-  
-//     // ... existing code ...
-  
-//     dateElements.forEach((element) => {
-//       // ... existing code ...
-  
-//       // Update the display of the content based on the presence of "custom" class
-//       if (hasCustomDate) {
-//         // ... existing code ...
-  
-//         // Check if customDateText is in the eeeAssignmentDates array
-//         if (eeeAssignmentDates.includes(customDateText)) {
-//           // Update the list-group-item innerHTML for EEE assignment dates
-//           const listGroupItem = contentElement.querySelector('.list-group-item.text-light');
-//           if (listGroupItem) {
-//             listGroupItem.innerHTML = "EEE Assignment";
-//           }
-//         } else {
-//           // ... existing code ...
-//         }
-//       } else {
-//         // ... existing code ...
-//       }
-//     });
-  
-//     // ... existing code ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// else if (MathCTAssignment.includes(customDateText)) {
+//   const listGroup = contentElement.querySelector('.list-group');
+//   if (listGroup) {
+//     listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>
+//     <li class="list-group-item text-light red-list">Math Assignment</li>`;
 //   }
+// }
+
+
+// else if (MELabViva.includes(customDateText)) {
+//   const listGroup = contentElement.querySelector('.list-group');
+//   if (listGroup) {
+//     listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>`;
+//   }
+// } 
+
+
+
