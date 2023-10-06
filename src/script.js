@@ -100,7 +100,7 @@ function setupCalendarButtons() {
       const EEELabReport1st30 = ['1'];
       const EnglishCT = ['2', '4'];
       const EnglishAssignment = ['3'];
-      const CSECT = ['7'];
+      const MathCSE = ['7'];
       const EEELabFinal2nd30 = ['8'];
       const MELabViva = ['9'];
       const MathCTAssignment = ['10'];
@@ -154,12 +154,13 @@ function setupCalendarButtons() {
             }
           } 
           
-          else if (CSECT.includes(customDateText)) {
-          const listGroup = contentElement.querySelector('.list-group');
-          if (listGroup) {
-            listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE CT (DKP Sir)</li>`;
+          else if (MathCSE.includes(customDateText)) {
+            const listGroup = contentElement.querySelector('.list-group');
+            if (listGroup) {
+              listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE CT (DKP Sir)</li>
+              <li class="list-group-item text-light red-list">Math Assignment Submission (Zahangir Sir)</li>`;
+            }
           }
-        } 
 
         else if (EEELabFinal2nd30.includes(customDateText)) {
           const listGroup = contentElement.querySelector('.list-group');
@@ -179,7 +180,7 @@ function setupCalendarButtons() {
           const listGroup = contentElement.querySelector('.list-group');
           if (listGroup) {
             listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math CT</li>
-            <li class="list-group-item text-light red-list">Math Assignment Submission</li>`;
+            <li class="list-group-item text-light red-list">Math Assignment Submission (Helal Sir)</li>`;
           }
         }
 
@@ -236,12 +237,12 @@ function setupCalendarButtons() {
 setupCalendarButtons();
 
 
-const buttonIds = ['calendar2', 'calendar4', 'calendar7', 'calendar3']; 
+const buttonIds = ['calendar2', 'calendar4', 'calendar3']; 
 buttonIds.forEach((id) => {
   addNotificationDot(id);
 });
 
-const buttonIdsSecond = ['calendar10']; 
+const buttonIdsSecond = ['calendar10', 'calendar7']; 
 buttonIdsSecond.forEach((id) => {
   addNotificationDotSecond(id);
 });
