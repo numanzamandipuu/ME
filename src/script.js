@@ -106,7 +106,7 @@ function setupCalendarButtons() {
       const MathCTAssignment = ['10'];
       const CSELabFinal = ['11'];
       const EEELabFinal1st30 = ['15'];
-      const BoardViva = ['18'];
+      const BoardViva = ['17'];
       
 
       // Update the display of the content based on the presence of "custom" class
@@ -188,8 +188,8 @@ function setupCalendarButtons() {
           if (listGroup) {
             listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE Lab Final </li>
             <li class="list-group-item text-light red-list">CSE CT</li>
-            <li class="list-group-item text-light red-list">Math CT</li>
-            <li class="list-group-item text-light red-list">Math Assignment Submission (Helal Sir)</li>`;
+            <li class="list-group-item text-light red-list">English Assignment Submission (Sayeed Sir)</li>
+            <li class="list-group-item text-light red-list">EEE Assignment Submission (Shamim Sir)</li>`;
           }
         } 
 
@@ -239,17 +239,17 @@ function setupCalendarButtons() {
 setupCalendarButtons();
 
 
-const buttonIds = ['calendar2', 'calendar4', 'calendar3']; 
+const buttonIds = ['calendar2', 'calendar4', 'calendar3', 'calendar7']; 
 buttonIds.forEach((id) => {
   addNotificationDot(id);
 });
 
-const buttonIdsSecond = ['calendar10', 'calendar7']; 
+const buttonIdsSecond = ['calendar10', 'calendar11']; 
 buttonIdsSecond.forEach((id) => {
   addNotificationDotSecond(id);
 });
 
-const buttonIdsYellow = ['calendar1', 'calendar8', 'calendar9', 'calendar11', 'calendar15', 'calendar18']; 
+const buttonIdsYellow = ['calendar1', 'calendar8', 'calendar9',  'calendar15', 'calendar17']; 
 buttonIdsYellow.forEach((id) => {
   addNotificationDotYellow(id);
 });
