@@ -157,8 +157,7 @@ function setupCalendarButtons() {
           else if (MathCSE.includes(customDateText)) {
             const listGroup = contentElement.querySelector('.list-group');
             if (listGroup) {
-              listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE CT (DKP Sir)</li>
-              <li class="list-group-item text-light red-list">Math Assignment Submission (Zahangir Sir)</li>`;
+              listGroup.innerHTML = `<li class="list-group-item text-light red-list">Math Assignment Submission (Zahangir Sir)</li>`;
             }
           }
 
@@ -187,7 +186,10 @@ function setupCalendarButtons() {
         else if (CSELabFinal.includes(customDateText)) {
           const listGroup = contentElement.querySelector('.list-group');
           if (listGroup) {
-            listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE Lab Final</li>`;
+            listGroup.innerHTML = `<li class="list-group-item text-light red-list">CSE Lab Final </li>
+            <li class="list-group-item text-light red-list">CSE CT</li>
+            <li class="list-group-item text-light red-list">Math CT</li>
+            <li class="list-group-item text-light red-list">Math Assignment Submission (Helal Sir)</li>`;
           }
         } 
 
